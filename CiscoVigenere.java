@@ -1,3 +1,5 @@
+package net.spritelink;
+
 import java.util.Random;
 
 /*
