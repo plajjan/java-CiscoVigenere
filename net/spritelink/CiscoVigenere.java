@@ -3,7 +3,7 @@ package net.spritelink;
 import java.util.Random;
 
 /*
- * This thing will encrypt and decrypt Cisco 
+ * This thing will encrypt and decrypt Cisco
  */
 public class CiscoVigenere {
 	// Cisco super secret key
@@ -15,13 +15,13 @@ public class CiscoVigenere {
         System.out.println(enc);
         System.out.println(decrypt(enc));
     }
- 
-    static String encrypt(String m) {
+
+    public static String encrypt(String m) {
 		Random rand = new Random();
 		return encrypt(m, rand.nextInt(15));
 	}
 
-    static String encrypt(String m, int init) {
+    public static String encrypt(String m, int init) {
 		// rearrange translation table according to initial index
 		String key = ikey.substring(init, ikey.length()) + ikey.substring(0, init);
         String res = String.format("%02d", init);
@@ -30,8 +30,8 @@ public class CiscoVigenere {
         }
         return res;
     }
- 
-    static String decrypt(String m) {
+
+    public static String decrypt(String m) {
 		// extract initial index from first two characters
 		int init = Integer.parseInt(m.substring(0, 2));
 		// rearrange translation table according to initial index
